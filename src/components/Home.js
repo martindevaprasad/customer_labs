@@ -38,8 +38,24 @@ export const Home = () => {
           (option) => option.value !== selectedSchema.value
         )
       );
-      //   setSelectedSchema(null)
+     
     }
+  };
+  const handleRemove = (schemaToRemove) => {
+    const removedSchema = selectedArray.find(
+      (schema) => schema.id === schemaToRemove.id
+    );
+  
+    const updatedSelectedArray = selectedArray.filter(
+      (schema) => schema.id !== schemaToRemove.id
+    );
+  
+    setSelectedArray(updatedSelectedArray);
+  
+   
+    setFilteredAvailableSchemas([...filteredAvailableSchemas, removedSchema]);
+
+   
   };
 
 
@@ -132,7 +148,7 @@ export const Home = () => {
                   inputValue={segmentName}
                   onChangeHandler={handleSegmentNameChange}
                 />
-               
+
                 <div>
                   <p>
                     To save your segment, you need to add the schemas to build
@@ -170,7 +186,7 @@ export const Home = () => {
                           selectedSchema={selectedSchema}
                           handleChange={handleChange}
                           option={option}
-                         
+                          onClickhandler={handleRemove}
                         />
                       </div>
                     ))}

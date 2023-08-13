@@ -1,5 +1,5 @@
 export const GetSelectedschema = (props) => {
-  const { selectedSchema, handleChange, option } = props;
+  const { selectedSchema, handleChange, option,onClickhandler } = props;
 
   return (
     <div className="d-flex">
@@ -22,7 +22,7 @@ export const GetSelectedschema = (props) => {
       </select>
 
       <svg
-      
+      onClick={onClickhandler}
         xmlns="http://www.w3.org/2000/svg"
         width="36"
         height="36"
