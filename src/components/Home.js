@@ -31,34 +31,28 @@ export const Home = () => {
 
   const handleAdd = () => {
     if (selectedSchema) {
-      setSelectedArray([...selectedArray, selectedSchema]); // push selected option to new array
+      setSelectedArray([...selectedArray, selectedSchema]); 
       // remove option from availableSchemas
       setFilteredAvailableSchemas(
         filteredAvailableSchemas.filter(
           (option) => option.value !== selectedSchema.value
         )
       );
-     
     }
   };
-  const handleRemove = (schemaToRemove) => {
-    const removedSchema = selectedArray.find(
-      (schema) => schema.id === schemaToRemove.id
-    );
-  
-    const updatedSelectedArray = selectedArray.filter(
-      (schema) => schema.id !== schemaToRemove.id
-    );
-  
-    setSelectedArray(updatedSelectedArray);
-  
-   
-    setFilteredAvailableSchemas([...filteredAvailableSchemas, removedSchema]);
+  // const handleRemove = (schemaToRemove) => {
+  //   const removedSchema = selectedArray.find(
+  //     (schema) => schema.id === schemaToRemove.id
+  //   );
 
-   
-  };
+  //   const updatedSelectedArray = selectedArray.filter(
+  //     (schema) => schema.id !== schemaToRemove.id
+  //   );
 
+  //   setSelectedArray(updatedSelectedArray);
 
+  //   setFilteredAvailableSchemas([...filteredAvailableSchemas, removedSchema]);
+  // };
 
   console.log(filteredAvailableSchemas);
   const handleSegmentNameChange = (event) => {
@@ -79,7 +73,7 @@ export const Home = () => {
     console.log(jsonData);
 
     setSegmentName("");
-    // setFilteredAvailableSchemas([]);
+   
   };
 
   return (
@@ -186,7 +180,7 @@ export const Home = () => {
                           selectedSchema={selectedSchema}
                           handleChange={handleChange}
                           option={option}
-                          onClickhandler={handleRemove}
+                          
                         />
                       </div>
                     ))}
