@@ -79,7 +79,7 @@ export const Home = () => {
     console.log(jsonData);
 
     setSegmentName("");
-    setFilteredAvailableSchemas([]);
+    // setFilteredAvailableSchemas([]);
   };
 
   return (
